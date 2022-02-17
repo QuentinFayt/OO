@@ -22,12 +22,15 @@ require_once "./player/hero_classes/Wizard.php";
 
 <body>
     <?php
-    $characters = ["char1" => new Fighter("Michael"), "char2" => new Rogue("André"), "char3" => new Wizard("Pierre")];
-
+    $characters = [
+        "char1" => new Fighter("Michael"),
+        "char2" => new Rogue("André"),
+        "char3" => new Wizard("Pierre")
+    ];
     foreach ($characters as $char) {
-        echo "Hello, I'm " . $char->__get("name") . " and I'm a " . explode("\\", get_class($char))[1] . ". I start at level " . $char->__get("level") . " my strength is equal to " . $char->__get("strength") . " and I have " . $char->__get("life") . " life points!</br>";
+        echo "Hello, I'm " . $char->name . " and I'm a " . explode("\\", get_class($char))[1] . ". I start at level " . $char->level . " my strength is equal to " . $char->strength . " and I have " . $char->life . " life points!</br>";
     }
-
+    $characters["char1"]->strike($characters["char2"]);
     ?>
 </body>
 
