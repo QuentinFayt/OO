@@ -9,6 +9,7 @@ class Personnage
     private  $niveau;
     private  $experience;
     private  $vie;
+    public $test;
 
     // constantes
     const VIE_DE_BASE = 1000;
